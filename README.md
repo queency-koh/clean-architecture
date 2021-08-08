@@ -1,1 +1,1 @@
-# clean-architecture
+# The Clean Architecture
