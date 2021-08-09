@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CleanArchitecture.WebUI.Models
+namespace CleanArchitecture.Domain.Entities
 {
     public class TodoItem
     {

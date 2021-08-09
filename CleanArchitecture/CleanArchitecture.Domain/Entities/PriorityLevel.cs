@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebUI.Models
+﻿namespace CleanArchitecture.Domain.Entities
 {
     public enum PriorityLevel
     {

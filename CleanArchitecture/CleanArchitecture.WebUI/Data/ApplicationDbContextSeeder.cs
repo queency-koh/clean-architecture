@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.WebUI.Models;
+﻿using CleanArchitecture.Domain.Entities;
 using System.Linq;
 
 namespace CleanArchitecture.WebUI.Data

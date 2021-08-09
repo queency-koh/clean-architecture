@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.WebUI.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CleanArchitecture.WebUI.Data;
-using CleanArchitecture.WebUI.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CleanArchitecture.WebUI.Controllers
 {

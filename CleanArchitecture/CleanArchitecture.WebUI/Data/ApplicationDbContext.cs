@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.WebUI.Models;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CleanArchitecture.WebUI.Models
+namespace CleanArchitecture.Domain.Entities
 {
     public class TodoList
     {
