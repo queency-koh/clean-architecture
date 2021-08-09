@@ -1,0 +1,14 @@
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.deps.json
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.pdb
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Application.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Domain.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Application.pdb
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Domain.pdb
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.AssemblyInfo.cs
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.csproj.CopyComplete
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.pdb
