@@ -1,0 +1,9 @@
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.deps.json
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.pdb
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.csproj.AssemblyReference.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.AssemblyInfoInputs.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.AssemblyInfo.cs
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.dll
+C:\Users\Iridium\source\repos\clean-architecture\CleanArchitecture\CleanArchitecture.Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.pdb
