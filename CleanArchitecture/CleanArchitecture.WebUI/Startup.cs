@@ -1,5 +1,5 @@
 using CleanArchitecture.Infrastructure.Identity;
-using CleanArchitecture.WebUI.Data;
+using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

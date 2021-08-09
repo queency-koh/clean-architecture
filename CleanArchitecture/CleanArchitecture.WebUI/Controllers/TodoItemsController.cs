@@ -1,5 +1,5 @@
 ﻿using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.WebUI.Data;
+using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

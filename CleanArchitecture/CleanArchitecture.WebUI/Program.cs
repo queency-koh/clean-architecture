@@ -1,4 +1,4 @@
-using CleanArchitecture.WebUI.Data;
+using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
