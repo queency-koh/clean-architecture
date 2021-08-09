@@ -47,6 +47,11 @@ namespace CleanArchitecture.WebUI
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddOpenApiDocument(configure =>
+            {
+                configure.Title = "Clean Architecture API";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +75,9 @@ namespace CleanArchitecture.WebUI
             {
                 app.UseSpaStaticFiles();
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseRouting();
 
