@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using System.Linq;
 
-namespace CleanArchitecture.WebUI.Data
+namespace CleanArchitecture.Infrastructure.Persistence
 {
     public static class ApplicationDbContextSeeder
     {
