@@ -21,7 +21,7 @@ namespace CleanArchitecture.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructureServices(Configuration);
-            services.AddApplicationServices(Configuration);
+            services.AddApplicationServices();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
