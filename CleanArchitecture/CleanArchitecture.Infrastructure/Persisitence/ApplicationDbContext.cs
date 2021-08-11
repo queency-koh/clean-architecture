@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Options;
 
 namespace CleanArchitecture.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext(
             DbContextOptions options,
