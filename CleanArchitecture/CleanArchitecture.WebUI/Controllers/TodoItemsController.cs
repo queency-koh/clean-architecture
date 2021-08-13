@@ -1,10 +1,11 @@
-﻿using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
+﻿using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList;
+using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
+using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList.DeleteTodoList;
+using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
 using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Persistence;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CleanArchitecture.WebUI.Controllers
@@ -13,95 +14,45 @@ namespace CleanArchitecture.WebUI.Controllers
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IMediator mediator;
 
-        public TodoItemsController(ApplicationDbContext context)
+        public TodoItemsController(IMediator mediator)
         {
-            _context = context;
+            this.mediator = mediator;
         }
 
         // GET: api/TodoItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoList>>> GetTodoLists([FromServices] IGetTodoListsQuery query)
+        public async Task<ActionResult<IEnumerable<TodoList>>> GetTodoLists()
         {
-            return await query.Handle();
-        }
-
-        // GET: api/TodoItems/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
-        {
-            var todoItem = await _context.TodoItems.FindAsync(id);
-
-            if (todoItem == null)
-            {
-                return NotFound();
-            }
-
-            return todoItem;
+            return await mediator.Send(new GetTodoListsQuery());
         }
 
         // PUT: api/TodoItems/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
+        public async Task<IActionResult> PutTodoItem(long id, UpdateTodoListCommand command)
         {
-            if (id != todoItem.Id)
-            {
-                return BadRequest();
-            }
+            if (id != command.Id) return BadRequest();
 
-            _context.Entry(todoItem).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TodoItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await mediator.Send(command);
 
             return NoContent();
         }
 
         // POST: api/TodoItems
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
+        public async Task<ActionResult<int>> PostTodoItem(CreateTodoListCommand command)
         {
-            _context.TodoItems.Add(todoItem);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return await mediator.Send(command);
         }
 
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
-            if (todoItem == null)
-            {
-                return NotFound();
-            }
-
-            _context.TodoItems.Remove(todoItem);
-            await _context.SaveChangesAsync();
+            await mediator.Send(new DeleteTodoListCommand { Id = id });
 
             return NoContent();
-        }
-
-        private bool TodoItemExists(long id)
-        {
-            return _context.TodoItems.Any(e => e.Id == id);
         }
     }
 }

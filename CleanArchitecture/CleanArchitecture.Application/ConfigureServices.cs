@@ -1,5 +1,7 @@
 ﻿using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace CleanArchitecture.Application
 {
@@ -8,7 +10,7 @@ namespace CleanArchitecture.Application
         public static IServiceCollection AddApplicationServices(
             this IServiceCollection services)
         {
-            services.AddTransient<IGetTodoListsQuery, GetTodoListsQuery>();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             return services;
         }
