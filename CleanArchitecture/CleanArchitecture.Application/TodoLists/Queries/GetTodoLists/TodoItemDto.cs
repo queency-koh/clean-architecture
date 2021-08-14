@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Domain.Entities;
-using System.Linq.Expressions;
-using System;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Common.Mappings;
+using CleanArchitecture.Domain.Entities;
 
 namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
 {
-    public class TodoItemDto
+    public class TodoItemDto : IMapFrom<TodoItem>
     {
         public long Id { get; set; }
 
@@ -18,20 +18,11 @@ namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
 
         public string Note { get; set; }
 
-        public static Expression<Func<TodoItem, TodoItemDto>> Projection
+        public void Mapping(Profile profile)
         {
-            get
-            {
-                return item => new TodoItemDto
-                {
-                    Id = item.Id,
-                    ListId = item.ListId,
-                    Title = item.Title,
-                    Done = item.Done,
-                    PriorityLevel = (int)item.PriorityLevel,
-                    Note = item.Note
-                };
-            }
+            profile.CreateMap<TodoItem, TodoItemDto>()
+                   .ForMember(d => d.PriorityLevel, opt =>
+                    opt.MapFrom(s => (int)s.PriorityLevel));
         }
     }
 }

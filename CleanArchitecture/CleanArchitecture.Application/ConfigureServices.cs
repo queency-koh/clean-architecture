@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
+﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -11,6 +11,7 @@ namespace CleanArchitecture.Application
             this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             return services;
         }
