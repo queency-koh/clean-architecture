@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
 {
-    public class GetTodoListsQuery : IRequest<List<TodoListDto>>
+    public class GetTodoListsQuery : IRequest<TodosVm>
     {
     }
 
-    public class GetTodoListsQueryHandler : IRequestHandler<GetTodoListsQuery, List<TodoListDto>>
+    public class GetTodoListsQueryHandler : IRequestHandler<GetTodoListsQuery, TodosVm>
     {
         private readonly IApplicationDbContext context;
 
@@ -22,11 +22,15 @@ namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
             this.context = context;
         }
 
-        public async Task<List<TodoListDto>> Handle(GetTodoListsQuery request, CancellationToken cancellationToken)
+        public async Task<TodosVm> Handle(GetTodoListsQuery request, CancellationToken cancellationToken)
         {
-            return await context.TodoLists
+            var vm = new TodosVm();
+
+            vm.Lists = await context.TodoLists
                     .Select(TodoListDto.Projection)
                     .ToListAsync(cancellationToken);
+
+            return vm;
         }
     }
 }
