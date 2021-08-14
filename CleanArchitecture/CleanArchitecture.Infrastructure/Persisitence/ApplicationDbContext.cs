@@ -5,6 +5,7 @@ using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System;
 
 namespace CleanArchitecture.Infrastructure.Persistence
 {
@@ -18,5 +19,14 @@ namespace CleanArchitecture.Infrastructure.Persistence
 
         public DbSet<TodoItem> TodoItems { get; set; }
         public DbSet<TodoList> TodoLists { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .LogTo(Console.WriteLine)
+                .EnableDetailedErrors();
+
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }
