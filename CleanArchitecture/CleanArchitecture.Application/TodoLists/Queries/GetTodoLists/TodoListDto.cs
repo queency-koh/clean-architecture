@@ -12,10 +12,5 @@ namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
         public string Title { get; set; }
 
         public IList<TodoItemDto> Items { get; set; }
-
-        public void Mapping(Profile profile)
-        {
-            profile.CreateMap<TodoList, TodoListDto>();
-        }
     }
 }
