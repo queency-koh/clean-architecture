@@ -1,11 +1,8 @@
-﻿using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
-using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList.DeleteTodoList;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
-using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
+using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CleanArchitecture.WebUI.Controllers
@@ -21,36 +18,34 @@ namespace CleanArchitecture.WebUI.Controllers
             this.mediator = mediator;
         }
 
-        // GET: api/TodoItems
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoList>>> GetTodoLists()
+        // POST: api/TodoItems
+        [HttpPost]
+        public async Task<ActionResult<long>> PostTodoItem(
+            CreateTodoItemCommand command)
         {
-            return await mediator.Send(new GetTodoListsQuery());
+            return await mediator.Send(command);
         }
 
         // PUT: api/TodoItems/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, UpdateTodoListCommand command)
+        public async Task<IActionResult> PutTodoItem(long id,
+            UpdateTodoItemCommand command)
         {
-            if (id != command.Id) return BadRequest();
+            if (id != command.Id)
+            {
+                return BadRequest();
+            }
 
             await mediator.Send(command);
 
             return NoContent();
         }
 
-        // POST: api/TodoItems
-        [HttpPost]
-        public async Task<ActionResult<int>> PostTodoItem(CreateTodoListCommand command)
-        {
-            return await mediator.Send(command);
-        }
-
         // DELETE: api/TodoItems/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
-            await mediator.Send(new DeleteTodoListCommand { Id = id });
+            await mediator.Send(new DeleteTodoItemCommand { Id = id });
 
             return NoContent();
         }
