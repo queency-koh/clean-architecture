@@ -1,5 +1,6 @@
 using CleanArchitecture.Application;
 using CleanArchitecture.Infrastructure;
+using CleanArchitecture.WebUI.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +24,8 @@ namespace CleanArchitecture.WebUI
             services.AddInfrastructureServices(Configuration);
             services.AddApplicationServices();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options =>
+              options.Filters.Add(new ApiExceptionFilterAttribute()));
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
