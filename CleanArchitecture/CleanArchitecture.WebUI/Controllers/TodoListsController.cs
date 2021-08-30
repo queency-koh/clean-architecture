@@ -3,11 +3,13 @@ using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
 using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList.DeleteTodoList;
 using CleanArchitecture.Application.TodoLists.Queries.GetTodoLists;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CleanArchitecture.WebUI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoListsController : ControllerBase
@@ -21,6 +23,7 @@ namespace CleanArchitecture.WebUI.Controllers
 
         // GET: api/TodoLists
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<TodosVm>> GetTodoLists()
         {
             return await mediator.Send(new GetTodoListsQuery());

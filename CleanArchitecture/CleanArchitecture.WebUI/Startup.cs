@@ -1,6 +1,8 @@
 using CleanArchitecture.Application;
+using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.WebUI.Filters;
+using CleanArchitecture.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +25,9 @@ namespace CleanArchitecture.WebUI
         {
             services.AddInfrastructureServices(Configuration);
             services.AddApplicationServices();
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddControllersWithViews(options =>
               options.Filters.Add(new ApiExceptionFilterAttribute()));
