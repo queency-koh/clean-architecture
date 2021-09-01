@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using CleanArchitecture.Domain.Common;
+using System.Collections.Generic;
 
 namespace CleanArchitecture.Domain.Entities
 {
-    public class TodoList
+    public class TodoList : AuditableEntity
     {
         public int Id { get; set; }
 

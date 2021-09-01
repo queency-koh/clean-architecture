@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CleanArchitecture.Domain.Common;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace CleanArchitecture.Domain.Entities
 {
-    public class TodoItem
+    public class TodoItem : AuditableEntity
     {
         public long Id { get; set; }
 
