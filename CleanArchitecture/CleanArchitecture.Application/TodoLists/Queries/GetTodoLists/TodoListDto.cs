@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CleanArchitecture.Application.Common.Mappings;
+﻿using CleanArchitecture.Application.Common.Mappings;
 using CleanArchitecture.Domain.Entities;
 using System.Collections.Generic;
 
