@@ -17,12 +17,5 @@ namespace CleanArchitecture.Application.TodoLists.Queries.GetTodoLists
         public int PriorityLevel { get; set; }
 
         public string Note { get; set; }
-
-        public void Mapping(Profile profile)
-        {
-            profile.CreateMap<TodoItem, TodoItemDto>()
-                   .ForMember(d => d.PriorityLevel, opt =>
-                    opt.MapFrom(s => (int)s.PriorityLevel));
-        }
     }
 }
