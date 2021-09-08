@@ -19,6 +19,12 @@ namespace CleanArchitecture.Application
             services.AddTransient(typeof(IPipelineBehavior<,>),
                 typeof(ValidationBehavior<,>));
 
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(PerformanceBehavior<,>));
+
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(UnhandledExceptionBehavior<,>));
+
             return services;
         }
     }
